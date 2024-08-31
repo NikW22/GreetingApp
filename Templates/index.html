@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Say Hello</title>
+    <link rel="stylesheet" href="{{ url_for('Static', filename='css/main.css')}}">
+</head>
+<body>
+        <img src="https://64.media.tumblr.com/0bca54fb91d699dc1103447b85c33d72/tumblr_inline_not4dg3n2V1rtdfb6_400.jpg">
+        <br>
+        <form action="greet" method="post">
+            {% for message in get_flashed_messages()%}
+                <p> {{message}} </p>
+            {% endfor %}
+            <br>
+            <input type="text" name="name_input">
+            <br>
+            <input type="submit" value="GREET" id="greet">
+        </form>
+</body>
+</html>
